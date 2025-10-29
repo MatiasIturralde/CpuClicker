@@ -1,0 +1,392 @@
+body {
+    background-color: #001f3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    color: #e0f2f1;
+    text-align: center;
+}
+
+.card-container {
+    background-color: #003366;
+    border: 5px solid #4a90e2;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cpu-container {
+    margin-bottom: 20px;
+}
+
+.cpu-name {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.cpu-button {
+    background-color: #66c6c6;
+    border: 4px solid #4a90e2;
+    border-radius: 15px;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s ease-in-out;
+    padding: 0;
+}
+
+.cpu-button:active {
+    transform: scale(0.95);
+}
+
+.cpu-icon {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+
+.clicks-container {
+    margin-bottom: 30px;
+}
+
+.clicks-label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.clicks-display {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+}
+
+.game-button {
+    background-color: #4a90e2;
+    border: 3px solid #66c6c6;
+    border-radius: 10px;
+    color: #e0f2f1;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    padding: 15px 10px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    word-wrap: break-word;
+}
+
+.game-button:hover {
+    background-color: #66c6c6;
+}
+
+@media (max-width: 480px) {
+    .buttons-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos para las Cards Modales */
+.modal-card {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-content {
+    background-color: #003366;
+    border: 5px solid #4a90e2;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    width: 95%;
+    max-width: 600px;
+    height: 90%;
+    max-height: 700px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeInScale 0.3s ease-in-out;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: 3px solid #66c6c6;
+    border-radius: 5px;
+    color: #e0f2f1;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 12px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #4a90e2;
+    border-color: #4a90e2;
+}
+
+.modal-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.modal-body p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Clases para ocultar y mostrar */
+.hidden {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.visible {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Animación para que aparezca la card */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* --- Estilos para la Galería de CPUs --- */
+.cpu-gallery-container {
+    display: grid;
+    margin-top: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    justify-items: center;
+    align-items: stretch;
+}
+
+.cpu-card {
+    background-color: #004d99;
+    border: 2px solid #66c6c6;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    
+    width: auto;
+    height: auto;
+    aspect-ratio: 1 / 1.7; /* Aumentado para dar más espacio vertical */
+    overflow: hidden;
+}
+
+.cpu-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.cpu-card-img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    margin: 0;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.cpu-info-box {
+    background-color: #002244;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top: 1px solid #001f3f;
+}
+
+.cpu-card-name {
+    margin: 0;
+    font-size: 0.7rem; /* Reducido para evitar saltos de línea con nombres largos */
+    color: #e0f2f1;
+    word-wrap: break-word;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 0 2px; /* Añadido un pequeño padding horizontal */
+}
+
+.cpu-card-description {
+    font-size: 0.65rem;
+    color: #a7d9d9;
+    margin-top: 5px;
+    line-height: 1.1;
+}
+
+/* Ajustes para la barra de desplazamiento */
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #003366;
+    border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background-color: #4a90e2;
+    border-radius: 10px;
+    border: 2px solid #003366;
+}
+
+/* Media Queries para una mejor visualización en móviles */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 500px;
+        padding: 25px;
+    }
+    .modal-title {
+        font-size: 1.6rem;
+    }
+    .close-btn {
+        font-size: 2.2rem;
+        padding: 0 10px;
+    }
+    .cpu-gallery-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    .cpu-card-img {
+        height: 55%;
+    }
+    .cpu-card-name {
+        font-size: 0.65rem;
+    }
+    .cpu-card-description {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        padding: 15px;
+    }
+
+    .game-title {
+        font-size: 1.2rem;
+    }
+
+    .cpu-button {
+        width: 120px;
+        height: 120px;
+    }
+
+    .clicks-display {
+        font-size: 2rem;
+    }
+
+    .game-button {
+        font-size: 0.7rem;
+        padding: 12px 8px;
+    }
+    
+    .modal-content {
+        padding: 20px;
+        max-width: 95%;
+        max-height: 90%;
+    }
+    
+    .modal-title {
+        font-size: 1.4rem;
+    }
+    
+    .close-btn {
+        font-size: 2rem;
+        padding: 0 10px;
+    }
+
+    .cpu-gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .cpu-card {
+        aspect-ratio: 1 / 1.6;
+    }
+    
+    .cpu-card-img {
+        height: 50%;
+    }
+    
+    .cpu-card-name {
+        font-size: 0.65rem;
+    }
+    .cpu-card-description {
+        font-size: 0.55rem;
+    }
+}

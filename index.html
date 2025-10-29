@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Clicker</title>
+    <link rel="stylesheet" href="./frontend/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="./frontend/index.js"></script>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card-content">
+            <h1 class="game-title">CPU Clicker</h1>
+
+            <div class="cpu-container">
+                <span class="cpu-name">Nombre cpu</span>
+                <button id="cpu-button" class="cpu-button">
+                    <img src="cpu-icon.png" alt="Icono de CPU" class="cpu-icon">
+                </button>
+            </div>
+
+            <div class="clicks-container">
+                <span class="clicks-label">Número clicks</span>
+                <span id="clicks-display" class="clicks-display">0</span>
+            </div>
+
+            <div class="buttons-grid">
+                <button id="btn-estadisticas" class="game-button">Estadísticas</button>
+                <button id="btn-galeria" class="game-button">Galería CPUs</button>
+                <button id="btn-ayuda" class="game-button">Ayuda</button>
+                <button id="btn-configuracion" class="game-button">Configuración</button>
+            </div>
+            <p>Version: 1.1 - By: Matimad</p>
+        </div>
+    </div>
+
+    <div id="modal-estadisticas" class="modal-card hidden">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 class="modal-title">Estadísticas</h2>
+                <button class="close-btn" aria-label="Cerrar ventana">&times;</button>
+            </header>
+            <main class="modal-body">
+                <h2>Estadisticas del usuario</h2>
+                <p>Nombre usuario: x</p>
+                <p>Número de clicks totales: x<p>
+                <p>Cpu actual: x</p>
+                <p>Cantidad cpu obtenidos: x</p>
+                <hr>
+            </main>
+        </div>
+    </div>
+
+<div id="modal-galeria" class="modal-card hidden">
+    <div class="modal-content">
+        <header class="modal-header">
+            <h2 class="modal-title">Galería CPUs</h2>
+            <button class="close-btn" aria-label="Cerrar ventana">&times;</button>
+        </header>
+        <main class="modal-body">
+            <div class="cpu-gallery-container">
+                <div class="cpu-card">
+                    <img src="https://th.bing.com/th/id/OIP.QZVkuKSKb0vBsLPd1Xhl1AHaHa?w=200&h=200&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3" alt="CPU 1" class="cpu-card-img">
+                    <div class="cpu-info-box">
+                        <p class="cpu-card-name">Intel I7 3770K</p>
+                    </div>
+                </div>
+                <div class="cpu-card">
+                    <img src="cpu-thumb-1.png" alt="CPU 1" class="cpu-card-img">
+                    <div class="cpu-info-box">
+                        <p class="cpu-card-name">Intel I7 3770K</p>
+                    </div>
+                </div>
+                <div class="cpu-card">
+                    <img src="cpu-thumb-1.png" alt="CPU 1" class="cpu-card-img">
+                    <div class="cpu-info-box">
+                        <p class="cpu-card-name">Intel I7 3770K</p>
+                    </div>
+                </div>
+                <div class="cpu-card">
+                    <img src="cpu-thumb-1.png" alt="CPU 1" class="cpu-card-img">
+                    <div class="cpu-info-box">
+                        <p class="cpu-card-name">Intel I7 3770K</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+    <div id="modal-ayuda" class="modal-card hidden">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 class="modal-title">Ayuda</h2>
+                <button class="close-btn" aria-label="Cerrar ventana">&times;</button>
+            </header>
+            <main class="modal-body">
+                <h2>Instrucciones y tips para jugar.</h2>
+                <p>El juego se basa en conseguir el mejor CPU en base a el número de clicks que se hagan.</p>
+                <p>Cada determinados clicks se podrá mejorar de CPU.</p>
+                <p>Compite contra otros jugadores</p>
+            </main>
+        </div>
+    </div>
+
+    <div id="modal-configuracion" class="modal-card hidden">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 class="modal-title">Configuración</h2>
+                <button class="close-btn" aria-label="Cerrar ventana">&times;</button>
+            </header>
+            <main class="modal-body">
+                <h2>Información</h2>
+                <p>Versión actual: 1.1</p>
+                <p>Idioma: Español</p>
+                <p>Cantidad CPU: 20</p>
+                <p>Tema: Oscuro</p>
+                <p>Desarrollador: Matimad</p>
+                <h2>Configuraciones</h2>
+                <p>Proximamente...</p>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
