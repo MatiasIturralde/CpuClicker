@@ -2,7 +2,7 @@
 
 class Conexion {
     private $host = 'localhost';
-    private $db = 'cpuclicker';
+    private $db = 'clickgamecpu';
     private $user = 'root';
     private $password = '';
     private $charset = 'utf8mb4';
@@ -14,7 +14,8 @@ class Conexion {
             $this->connection = new PDO($dsn, $this->user, $this->password);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
-            die('Error de conexión: ' . $e->getMessage());
+            // Lanzar excepción para que el router la capture y devuelva JSON
+            throw new Exception('Error de conexión: ' . $e->getMessage());
         }
     }
 
