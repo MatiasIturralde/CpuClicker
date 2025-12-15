@@ -1,6 +1,6 @@
 # CpuClicker
 
-CpuClicker es un proyecto de **práctica de desarrollo web full-stack**, de tipo *clicker game / aplicación interactiva*.
+CpuClicker es un proyecto de **práctica de desarrollo web full-stack**, de tipo *clicker game / página web interactiva*.
 
 ---
 
@@ -42,5 +42,8 @@ Actualmente, el proyecto se encuentra desplegado en:
 
 * **InfinityFree** (Frontend y Backend)
 
+##Link hacia la página web: **https://github.com/MatiasIturralde/CpuClicker**
+
 ---
+
 
