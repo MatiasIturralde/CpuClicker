@@ -6,7 +6,7 @@ CpuClicker es un proyecto de **práctica de desarrollo web full-stack**, de tipo
 
 ## 📌 Descripción
 
-**CpuClicker** es una página web donde el usuario puede realizar clics o interacciones para incrementar un contador de *clicks*, mediante una interfaz web y la lógica implementada en el backend.
+**CpuClicker** es una página web donde el usuario puede realizar clicks o interacciones para incrementar un contador de *clicks*, mediante una interfaz web y la lógica implementada en el backend.
 
 Este proyecto está separado en dos partes principales:
 
@@ -45,5 +45,6 @@ Actualmente, el proyecto se encuentra desplegado en:
 ##Link hacia la página web: **https://github.com/MatiasIturralde/CpuClicker**
 
 ---
+
 
 
