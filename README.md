@@ -1,7 +1,3 @@
-¡Claro! Aquí tienes el texto **corregido en ortografía, gramática y estilo**, manteniendo tu contenido y mejorando la claridad y consistencia:
-
----
-
 # CpuClicker
 
 CpuClicker es un proyecto de **práctica de desarrollo web full-stack**, de tipo *clicker game / aplicación interactiva*.
@@ -47,3 +43,4 @@ Actualmente, el proyecto se encuentra desplegado en:
 * **InfinityFree** (Frontend y Backend)
 
 ---
+
